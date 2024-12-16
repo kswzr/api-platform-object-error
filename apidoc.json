@@ -1,0 +1,410 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "",
+        "description": "",
+        "version": "0.0.0"
+    },
+    "servers": [
+        {
+            "url": "/",
+            "description": ""
+        }
+    ],
+    "paths": {
+        "/api/products": {
+            "get": {
+                "operationId": "api_products_get_collection",
+                "tags": [
+                    "Product"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Product collection",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Product"
+                                    }
+                                }
+                            },
+                            "text/html": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Product"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "summary": "Retrieves the collection of Product resources.",
+                "description": "Retrieves the collection of Product resources.",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "The collection page number",
+                        "required": false,
+                        "deprecated": false,
+                        "allowEmptyValue": true,
+                        "schema": {
+                            "type": "integer",
+                            "default": 1
+                        },
+                        "style": "form",
+                        "explode": false,
+                        "allowReserved": false
+                    }
+                ],
+                "deprecated": false
+            },
+            "post": {
+                "operationId": "api_products_post",
+                "tags": [
+                    "Product"
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Product resource created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Product"
+                                }
+                            },
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Product"
+                                }
+                            }
+                        },
+                        "links": {}
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "422": {
+                        "description": "Unprocessable entity"
+                    }
+                },
+                "summary": "Creates a Product resource.",
+                "description": "Creates a Product resource.",
+                "parameters": [],
+                "requestBody": {
+                    "description": "The new Product resource",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Product"
+                            }
+                        },
+                        "text/html": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Product"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "deprecated": false
+            },
+            "parameters": []
+        },
+        "/api/products-with-index-by-int": {
+            "get": {
+                "operationId": "api_products-with-index-by-int_get_collection",
+                "tags": [
+                    "ProductWithIndexByInt"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ProductWithIndexByInt collection",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ProductWithIndexByInt"
+                                    }
+                                }
+                            },
+                            "text/html": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ProductWithIndexByInt"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "summary": "Retrieves the collection of ProductWithIndexByInt resources.",
+                "description": "Retrieves the collection of ProductWithIndexByInt resources.",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "The collection page number",
+                        "required": false,
+                        "deprecated": false,
+                        "allowEmptyValue": true,
+                        "schema": {
+                            "type": "integer",
+                            "default": 1
+                        },
+                        "style": "form",
+                        "explode": false,
+                        "allowReserved": false
+                    }
+                ],
+                "deprecated": false
+            },
+            "post": {
+                "operationId": "api_products-with-index-by-int_post",
+                "tags": [
+                    "ProductWithIndexByInt"
+                ],
+                "responses": {
+                    "201": {
+                        "description": "ProductWithIndexByInt resource created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProductWithIndexByInt"
+                                }
+                            },
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProductWithIndexByInt"
+                                }
+                            }
+                        },
+                        "links": {}
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "422": {
+                        "description": "Unprocessable entity"
+                    }
+                },
+                "summary": "Creates a ProductWithIndexByInt resource.",
+                "description": "Creates a ProductWithIndexByInt resource.",
+                "parameters": [],
+                "requestBody": {
+                    "description": "The new ProductWithIndexByInt resource",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ProductWithIndexByInt"
+                            }
+                        },
+                        "text/html": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ProductWithIndexByInt"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "deprecated": false
+            },
+            "parameters": []
+        },
+        "/api/products-without-index-by": {
+            "get": {
+                "operationId": "api_products-without-index-by_get_collection",
+                "tags": [
+                    "ProductWithoutIndexBy"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ProductWithoutIndexBy collection",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ProductWithoutIndexBy"
+                                    }
+                                }
+                            },
+                            "text/html": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ProductWithoutIndexBy"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "summary": "Retrieves the collection of ProductWithoutIndexBy resources.",
+                "description": "Retrieves the collection of ProductWithoutIndexBy resources.",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "The collection page number",
+                        "required": false,
+                        "deprecated": false,
+                        "allowEmptyValue": true,
+                        "schema": {
+                            "type": "integer",
+                            "default": 1
+                        },
+                        "style": "form",
+                        "explode": false,
+                        "allowReserved": false
+                    }
+                ],
+                "deprecated": false
+            },
+            "post": {
+                "operationId": "api_products-without-index-by_post",
+                "tags": [
+                    "ProductWithoutIndexBy"
+                ],
+                "responses": {
+                    "201": {
+                        "description": "ProductWithoutIndexBy resource created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProductWithoutIndexBy"
+                                }
+                            },
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProductWithoutIndexBy"
+                                }
+                            }
+                        },
+                        "links": {}
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "422": {
+                        "description": "Unprocessable entity"
+                    }
+                },
+                "summary": "Creates a ProductWithoutIndexBy resource.",
+                "description": "Creates a ProductWithoutIndexBy resource.",
+                "parameters": [],
+                "requestBody": {
+                    "description": "The new ProductWithoutIndexBy resource",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ProductWithoutIndexBy"
+                            }
+                        },
+                        "text/html": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ProductWithoutIndexBy"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "deprecated": false
+            },
+            "parameters": []
+        }
+    },
+    "components": {
+        "schemas": {
+            "Product": {
+                "type": "object",
+                "description": "",
+                "deprecated": false,
+                "properties": {
+                    "translations": {
+                        "readOnly": true,
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "unknown_type"
+                        }
+                    }
+                }
+            },
+            "ProductWithIndexByInt": {
+                "type": "object",
+                "description": "",
+                "deprecated": false,
+                "properties": {
+                    "translations": {
+                        "readOnly": true,
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ProductWithIndexByIntTranslation"
+                        }
+                    }
+                }
+            },
+            "ProductWithIndexByIntTranslation": {
+                "type": "object",
+                "description": "",
+                "deprecated": false,
+                "properties": {
+                    "id": {
+                        "readOnly": true,
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    }
+                }
+            },
+            "ProductWithoutIndexBy": {
+                "type": "object",
+                "description": "",
+                "deprecated": false,
+                "properties": {
+                    "translations": {
+                        "readOnly": true,
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ProductWithoutIndexByTranslation"
+                        }
+                    }
+                }
+            },
+            "ProductWithoutIndexByTranslation": {
+                "type": "object",
+                "description": "",
+                "deprecated": false,
+                "properties": {
+                    "id": {
+                        "readOnly": true,
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "responses": {},
+        "parameters": {},
+        "examples": {},
+        "requestBodies": {},
+        "headers": {},
+        "securitySchemes": {}
+    },
+    "security": [],
+    "tags": []
+}
