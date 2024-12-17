@@ -1,0 +1,26 @@
+--- /dev/null
++++ ../src/JsonSchema/SchemaFactory.php
+@@ -172,7 +172,9 @@
+         $propertySchemaType = $propertySchema['type'] ?? false;
+ 
+         $isUnknown = Schema::UNKNOWN_TYPE === $propertySchemaType
+-            || ('array' === $propertySchemaType && Schema::UNKNOWN_TYPE === ($propertySchema['items']['type'] ?? null));
++            || ('array' === $propertySchemaType && Schema::UNKNOWN_TYPE === ($propertySchema['items']['type'] ?? null))
++            || ('object' === $propertySchemaType && Schema::UNKNOWN_TYPE === ($propertySchema['additionalProperties']['type'] ?? null))
++        ;
+ 
+         if (
+             !$isUnknown && (
+@@ -219,6 +221,12 @@
+             $subSchema = $subSchemaFactory->buildSchema($className, $format, $parentType, null, $subSchema, $serializerContext + [self::FORCE_SUBSCHEMA => true], false);
+             if (!isset($subSchema['$ref'])) {
+                 continue;
++            }
++
++            if ($isCollection && $propertySchemaType === 'object' && isset($propertySchema['additionalProperties']['type'])) {
++                $propertySchema['additionalProperties']['$ref'] = $subSchema['$ref'];
++                unset($propertySchema['additionalProperties']['type']);
++                break;
+             }
+ 
+             if ($isCollection) {

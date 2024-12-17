@@ -330,8 +330,25 @@
                         "readOnly": true,
                         "type": "object",
                         "additionalProperties": {
-                            "type": "unknown_type"
+                            "$ref": "#/components/schemas/ProductTranslation"
                         }
+                    }
+                }
+            },
+            "ProductTranslation": {
+                "type": "object",
+                "description": "",
+                "deprecated": false,
+                "properties": {
+                    "id": {
+                        "readOnly": true,
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
                     }
                 }
             },
